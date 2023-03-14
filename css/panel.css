@@ -8,5 +8,7 @@ form input {
     padding: 10px;
     display: block;
 }
-
+.d-none{
+    display: none;
+}
 
