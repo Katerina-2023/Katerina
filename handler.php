@@ -13,6 +13,22 @@ if (isset($_POST['action']))
 
     switch($action)
     {
+        case 'add-product':
+            // посмотреть список входящих файлов
+            echo '<pre>';
+            $files = [];
+            $idx= 0;
+            foreach($_FILES['files']['name'] as $key => $value){
+                //var_dump($arr);
+                foreach($_FILES['files'] as $name => $arr){
+
+                    $files[$key][$name]=$arr[$key];
+
+                }
+            }
+            
+            var_dump($files);
+        break;
         case 'search':
             // запускаем функция поиска
             search($text);
