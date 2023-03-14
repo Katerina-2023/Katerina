@@ -1,10 +1,11 @@
 <?php
-
+// comment
 // подключаем файл с бд
 require_once('db.php');
 //comment
 require_once('header.php');
 require_once('search.php');
+// comment
 require_once('footer.php');
 
 
