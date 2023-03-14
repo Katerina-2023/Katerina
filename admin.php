@@ -10,6 +10,6 @@
     <input type="number" name="price" placeholder="цена">
     <input type="number" name="count" placeholder="количество">
     <input type="file" name="files[]" multiple="multiple">
-    <input class ="d-none" hidden type="text" name="action" value="add-product">
+    <input class="d-none" type="text" name="action" value="add-product">
     <input type="submit" value="Добавить товар">
 </form>
