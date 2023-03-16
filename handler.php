@@ -1,7 +1,17 @@
 <?php
+    session_start();
 
 //echo '<pre>';
 // $_POST - массив - содержит в себе информацию о POST запросе
+
+if(isset($_GET['logout'])){
+
+    $_SESSION = [];
+    setcookie(session_name(),'',time()-9999);
+    session_destroy();
+    header('Location:/shop2023/sign.php',true,301);
+    exit;
+}
 
 
 if (isset($_POST['action']))
@@ -101,8 +111,16 @@ function auth()
     // fetchAll() - получаем ответ 
     $result = $dbh->query($sql)->fetchAll();
 
-    echo '<pre>';
-    var_dump($result);
+    if ($result){
+        $_SESSION['USER'] = current($result);
+        header('Location:/shop2023', true,301);
+        exit;
+    }
+    else{
+        die('Неверный логин или пароль');
+    }
+    // echo '<pre>';
+    // var_dump($result);
 
 }
 
